@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import './FoodItem.css'
+import './foodItem.css'
 import { assets } from '../../assets/frontend_assets/assets'
 import { StoreContext } from '../../context/StoreContext';
 import axios from 'axios';
