@@ -1,9 +1,20 @@
 //logic that conects to the db
 import mongoose from "mongoose";
+import 'dotenv/config'
 
+const uri = process.env.MONGODB_URI;
 
-export const connectDB=async()=>{
-    await mongoose.connect('mongodb+srv://Justin02:Jordinspark$02@atlascluster.r6dcxci.mongodb.net/zomato').then(()=>{
-        console.log("DB connected")
-    })
+if (!uri) {
+    console.error("MONGODB_URI is not defined in environment variables");
+    process.exit(1);
+}
+
+export const connectDB = async () => {
+    try {
+        await mongoose.connect(uri);
+        console.log("DB connected");
+    } catch (error) {
+        console.error("Database connection failed:", error);
+        process.exit(1);
+    }
 }
