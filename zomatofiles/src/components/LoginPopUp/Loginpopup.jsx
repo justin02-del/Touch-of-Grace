@@ -32,12 +32,7 @@ const Loginpopup = ({setShowLogin}) => {
         else {
             new_url += "/api/user/register"
         }
-        console.log('VITE_API_URL from import.meta.env:', import.meta.env.VITE_API_URL); // <-- ADD THIS LINE
-
-    const BASE_URL = import.meta.env.VITE_API_URL;
-    const url = BASE_URL 
-
-    console.log('url in StoreContext:', url);
+        
         console.log('Sending request to:', new_url, 'with data:', data);
 
         const response = await axios.post(new_url, data);
