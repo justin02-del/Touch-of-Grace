@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { food_list, menu_list } from "../assets/frontend_assets/assets.js";
 import axios from "axios";
 export const StoreContext = createContext(null);
-import 'dotenv/config'
+
 
 const StoreContextProvider = (props) => {
 
