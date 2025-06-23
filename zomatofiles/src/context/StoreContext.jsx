@@ -2,14 +2,16 @@ import { createContext, useEffect, useState } from "react";
 import { food_list, menu_list } from "../assets/frontend_assets/assets.js";
 import axios from "axios";
 export const StoreContext = createContext(null);
+import 'dotenv/config'
 
 const StoreContextProvider = (props) => {
 
-    const url = "http://localhost:4000"
+    const BASE_URL = import.meta.env.VITE_API_URL;
+    const url = BASE_URL 
     const [food_list, setFoodList] = useState([]);
     const [cartItems, setCartItems] = useState({});
     const [token, setToken] = useState("")
-    const currency = "$";
+    const currency = "R";
     const deliveryCharge = 5;
 
     const addToCart = async (itemId) => {

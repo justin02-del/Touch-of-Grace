@@ -10,12 +10,13 @@ import orderRouter from "./routes/orderRoute.js"
 // app config
 const app = express()
 const port = process.env.PORT || 4000;
+const frontEndLink=process.env.FRONTEND_URL
 
 
 // middlewares
 app.use(express.json())
 app.use(cors({
-  origin: 'http://localhost:5173', // Replace with your frontend's origin
+  origin: frontEndLink, // Replace with your frontend's origin, this is the dev link: http://localhost:5173
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true // Allow cookies if needed
 }))
