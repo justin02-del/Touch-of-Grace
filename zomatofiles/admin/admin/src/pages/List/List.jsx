@@ -4,6 +4,9 @@ import { currency } from '../../components/assets/assets'
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
+const BASE_URL = import.meta.env.VITE_API_URL;
+    const url = BASE_URL 
+
 const List = ({url}) => {
 
   const [list, setList] = useState([]);

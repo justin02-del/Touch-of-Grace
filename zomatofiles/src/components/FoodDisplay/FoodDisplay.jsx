@@ -10,7 +10,7 @@ const FoodDisplay = ({category}) => {
   return (
     <div className='foodDisplay' id='foodDisplay'>
         <h2>
-            Top dishes near you
+            Top Jewellery Near You!
         </h2>
         <div className="foodDisplayList">
             {food_list.map((item,index)=>{

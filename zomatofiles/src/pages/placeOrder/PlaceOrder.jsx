@@ -117,7 +117,7 @@ const PlaceOrder = () => {
     const isValidForm = () => {
         for (let key in data) {
           if (!data[key]) {
-            alert(`Please fill in the ${key} field.`);
+            alert(`Please fill in the R{key} field.`);
             return false;
           }
         }
@@ -159,7 +159,7 @@ const PlaceOrder = () => {
     //           orderData.paymentReference = transaction.reference;
           
     //           console.log("Order data being sent to backend:", orderData); // Debugging log
-    //           const response = await axios.post(`${url}/api/order/place`, orderData, {
+    //           const response = await axios.post(`R{url}/api/order/place`, orderData, {
     //             headers: { token },
     //           });
           
@@ -246,7 +246,7 @@ const PlaceOrder = () => {
                     try {
                         orderData.paymentReference = transaction.reference;
                         
-                        const response = await axios.post(`${url}/api/order/place`, orderData, {
+                        const response = await axios.post(`R{url}/api/order/place`, orderData, {
                             headers: { 
                                 'Content-Type': 'application/json',
                                 token 
@@ -373,17 +373,17 @@ const PlaceOrder = () => {
                     <h2>Cart Totals</h2>
                     <div className="cartTotalDetails">
                         <p>Subtotal</p>
-                        <p>${getTotalCartAmount()}</p>
+                        <p>R{getTotalCartAmount()}</p>
                     </div>
                     <hr />
                     <div className="cartTotalDetails">
                         <p>Delivery Fee</p>
-                        <p>${getTotalCartAmount() === 0 ? 0 : deliveryCharge}</p>
+                        <p>R{getTotalCartAmount() === 0 ? 0 : deliveryCharge}</p>
                     </div>
                     <hr />
                     <div className="cartTotalDetails">
                         <b>Total</b>
-                        <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + deliveryCharge}</b>
+                        <b>R{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + deliveryCharge}</b>
                     </div>
                     <button onClick={placeOrder} type='button'>
                         PROCEED TO PAYMENT

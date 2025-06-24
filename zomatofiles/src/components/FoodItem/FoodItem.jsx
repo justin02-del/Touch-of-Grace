@@ -37,9 +37,9 @@ const FoodItem = ({id,name,price,description,image}) => {
                 }
             </p>
             <p className="foodItemPrice">
-                ${price}
+                R{price}
             </p>
-            <a href="${item.buy_now_url}">Buy Now</a>
+            <a href="R{item.buy_now_url}">Buy Now</a>
         </div>
     </div>
   )

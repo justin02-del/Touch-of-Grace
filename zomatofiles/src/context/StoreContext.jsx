@@ -6,10 +6,6 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
 
-    console.log('VITE_API_URL from import.meta.env:', import.meta.env.VITE_API_URL); // <-- THIS IS THE KEY
-    
-
-
     const BASE_URL = import.meta.env.VITE_API_URL;
     const url = BASE_URL 
 
